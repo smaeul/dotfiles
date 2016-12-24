@@ -1,3 +1,61 @@
+URxvt.cursorBlink:      true
+URxvt.externalBorder:   0
+#if WIDTH == 1920
+URxvt.font:             xft:PragmataPro Mono:pixelsize=19:antialias=true:autohint=false
+#else
+URxvt.font:             xft:PragmataPro Mono:pixelsize=15:antialias=true:autohint=false
+#endif
+URxvt.intensityStyles:  true
+URxvt.internalBorder:   0
+URxvt.jumpScroll:       false
+URxvt.pastableTabs:     true
+URxvt.pointerBlank:     true
+! URxvt.print-pipe: clipboard? save to file?
+URxvt.saveLines:        1024
+URxvt.scrollBar:        false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress:true
+URxvt.scrollTtyOutput:  false
+URxvt.secondaryScroll:  false
+URxvt.secondaryWheel:   true
+URxvt.skipScroll:       true
+URxvt.tintColor:        #7f7f7f
+URxvt.title:            Terminal
+URxvt.transparent:      true
+
+URxvt.background:       #1b181b
+URxvt.foreground:       #ccc2cc
+! URxvt.colorBD:
+! URxvt.colorIT:
+! URxvt.colorUL:
+URxvt.cursorColor:      #ccc2cc
+! URxvt.cursorColor2:
+
+! black
+URxvt.color0:           #1b181b
+URxvt.color8:           #665c63
+! red
+URxvt.color1:           #bf2a2a
+URxvt.color9:           #e65032
+! green
+URxvt.color2:           #2a8c2a
+URxvt.color10:          #47b347
+! yellow
+URxvt.color3:           #bf8b2a
+URxvt.color11:          #e6aa5c
+! blue
+URxvt.color4:           #4c61d9
+URxvt.color12:          #7393ff
+! magenta
+URxvt.color5:           #6d4fb3
+URxvt.color13:          #8162d9
+! cyan
+URxvt.color6:           #1e9494
+URxvt.color14:          #60bfbf
+! white
+URxvt.color7:           #ccc2cc
+URxvt.color15:          #f2e9f2
+
 Xcursor.size:           16
 Xcursor.theme:          Vanilla-DMZ
 
