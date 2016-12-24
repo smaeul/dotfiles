@@ -1,0 +1,18 @@
+[color]
+	ui = true
+[core]
+	autocrlf = input
+	compression = 9
+[push]
+	default = simple
+[receive]
+	denyCurrentBranch = warn
+[sendemail]
+	from = Samuel Holland <samuel@sholland.org>
+[stash]
+	showPatch = true
+[transfer]
+	fsckObjects = true
+[user]
+	email = samuel@sholland.org
+	name = Samuel Holland
