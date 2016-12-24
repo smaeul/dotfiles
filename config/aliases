@@ -1,0 +1,51 @@
+# .config/aliases: POSIX-compatible shell aliases and functions
+
+alias cfa='find . -name "*.[ch]" -exec clang-format -i {} +'
+alias cpufreq='cat /sys/bus/cpu/devices/*/cpufreq/scaling_cur_freq | sort -u'
+alias df='df -h'
+alias diff='git diff --no-index'
+alias du='du -h'
+alias egrep='grep -E --color=auto --exclude-dir=".git"'
+alias einfo='emerge --info'
+alias fgrep='grep -F --color=auto --exclude-dir=".git"'
+alias grep='grep --color=auto --exclude-dir=".git"'
+alias hfk='heimdall flash --KERNEL'
+alias la='ls -Al'
+alias ledger='ledger -cV --date-format %Y-%m-%d --explicit --no-revalued --strict'
+alias ll='ls -l'
+alias ls='ls --color=auto'
+alias lsdsk='lsblk -do NAME,TRAN,HCTL,TYPE,SIZE,VENDOR,MODEL,REV,SERIAL'
+alias mediascan='adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///sdcard'
+alias palist='pacmd list-sinks | grep -F -e index -e name:'
+alias pstree='pstree -U'
+alias rm='rm --one-file-system'
+
+calc() {
+  python3 -ic "from math import *; from random import *"
+}
+
+dead() {
+  find -L "$1" -type l
+}
+
+dotfiles() {
+  mkdir -pv "$XDG_CACHE_HOME"/{history,mpd,unison,vim/{backup,swap}}
+  mkdir -pv "$XDG_DATA_HOME"/{applications,fonts,icons,mpd,themes}
+  touch "$XDG_CACHE_HOME"/history/run
+  test -L "${HOME}/.themes" || ln -fnsv ".local/share/themes" "${HOME}/.themes"
+  command dotfiles
+}
+
+paset() {
+  local i inputs
+
+  inputs=($(pacmd list-sink-inputs | sed -n '/index/s/.*: //p'))
+  pacmd set-default-sink "$1" &>/dev/null
+  for i in ${inputs[*]}; do
+    pacmd move-sink-input "$i" "$1" &>/dev/null
+  done
+}
+
+pdfmerge () {
+  gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=combined_$(date +'%F_%T').pdf -f "$@"
+}
