@@ -1,0 +1,114 @@
+gtk_color_scheme = "base_color: #332e31;bg_color: #1f1f1f;fg_color: #ccc2cc;text_color: #ccc2cc;selected_bg_color: #5f5f5f;selected_fg_color: #ffffff;tooltip_bg_color: #505050;tooltip_fg_color: #ffffff"
+
+style "default" {
+    # Colors
+    base[ACTIVE]      = @selected_bg_color
+    base[INSENSITIVE] = @bg_color
+    base[NORMAL]      = @base_color
+    base[PRELIGHT]    = @base_color
+    base[SELECTED]    = @selected_bg_color
+
+    bg[ACTIVE]        = shade (0.9, @bg_color)
+    bg[INSENSITIVE]   = shade (1.4, @bg_color)
+    bg[NORMAL]        = @bg_color
+    bg[PRELIGHT]      = shade (1.1, @bg_color)
+    bg[SELECTED]      = @selected_bg_color
+
+    fg[ACTIVE]        = @fg_color
+    fg[INSENSITIVE]   = darker(@fg_color)
+    fg[NORMAL]        = @fg_color
+    fg[PRELIGHT]      = @fg_color
+    fg[SELECTED]      = @selected_fg_color
+
+    text[ACTIVE]      = @selected_fg_color
+    text[INSENSITIVE] = darker(@text_color)
+    text[NORMAL]      = @text_color
+    text[PRELIGHT]    = @text_color
+    text[SELECTED]    = @selected_fg_color
+
+    # Spacing
+    xthickness        = 1
+    ythickness        = 1
+
+    # Properties
+    GtkButton         ::child-displacement-x    = 1
+    GtkButton         ::child-displacement-y    = 1
+    GtkButton         ::default-border          = { 0, 0, 0, 0 }
+    GtkCheckButton    ::indicator-size          = 14
+    GtkExpander       ::expander-size           = 16
+    GtkMenu           ::horizontal-padding      = 0
+    GtkMenu           ::vertical-padding        = 0
+    GtkMenuBar        ::internal-padding        = 0
+    GtkPaned          ::handle-size             = 6
+    GtkRange          ::trough-border           = 0
+    GtkRange          ::slider-width            = 15
+    GtkRange          ::stepper-size            = 15
+    GtkScale          ::slider-length           = 15
+    GtkScale          ::trough-side-details     = 0
+    GtkScrollbar      ::min-slider-length       = 30
+    GtkToolbar        ::internal-padding        = 0
+    GtkTreeView       ::expander-size           = 14
+    GtkTreeView       ::vertical-separator      = 0
+
+    # Engine Options
+    engine "murrine" {
+        animation               = TRUE
+        arrowstyle              = 0
+        colorize_scrollbar      = TRUE
+        cellstyle               = 0
+        comboboxstyle           = 0
+        contrast                = 1.0
+        default_button_color    = @bg_color
+        expanderstyle           = 0
+        focus_color             = @selected_bg_color
+        focusstyle              = 1
+        glazestyle              = 0
+        glow_shade              = 0.8
+        glowstyle               = 5
+        handlestyle             = 0
+        highlight_shade         = 1.0
+        lightborder_shade       = 1.0
+        lightborderstyle        = 0
+        listviewheaderstyle     = 0
+        listviewstyle           = 0
+        menubaritemstyle        = 0
+        menubarstyle            = 0
+        menuitemstyle           = 0
+        menustyle               = 0
+        prelight_shade          = 1.0
+        progressbarstyle        = 0
+        reliefstyle             = 0
+        rgba                    = TRUE
+        roundness               = 0
+        scrollbarstyle          = 2
+        separatorstyle          = 0
+        sliderstyle             = 1
+        spinbuttonstyle         = 0
+        stepperstyle            = 0
+        textstyle               = 0
+        text_shade              = 1.0
+        toolbarstyle            = 0
+    }
+}
+
+style "menu" = "wider" {
+    bg[NORMAL]        = shade (1.2, @bg_color)
+}
+
+style "menu-item" = "wider" {
+    fg[PRELIGHT]      = @selected_fg_color
+}
+
+style "wide" {
+    xthickness        = 2
+    ythickness        = 2
+}
+
+style "wider" {
+    xthickness        = 3
+    ythickness        = 3
+}
+
+class "GtkWidget"   style "default"
+class "GtkRange"    style "wide"
+class "GtkFrame"    style "wide"
