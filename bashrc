@@ -1,5 +1,7 @@
 [[ $TERM = linux ]] && export LC_MESSAGES="C"
 
+umask 022
+
 # If not running interactively, don't do anything else
 [[ $- != *i* ]] && return
 
