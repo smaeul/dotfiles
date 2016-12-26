@@ -1,5 +1,6 @@
 # .config/aliases: POSIX-compatible shell aliases and functions
 
+alias calc='python3 -ic "from math import *; from random import *"'
 alias cfa='find . -name "*.[ch]" -exec clang-format -i {} +'
 alias cpufreq='cat /sys/bus/cpu/devices/*/cpufreq/scaling_cur_freq | sort -u'
 alias df='df -h'
@@ -19,10 +20,6 @@ alias mediascan='adb shell am broadcast -a android.intent.action.MEDIA_MOUNTED -
 alias palist='pacmd list-sinks | grep -F -e index -e name:'
 alias pstree='pstree -U'
 alias rm='rm --one-file-system'
-
-calc() {
-  python3 -ic "from math import *; from random import *"
-}
 
 dead() {
   find -L "$1" -type l
