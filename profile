@@ -8,4 +8,4 @@ SHELL=${SHELL:-$(getent passwd  "$LOGNAME" | cut -d: -f7)}
 XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/run/user/${LOGNAME}}
 
 # Execute a non-login shell with the appropriate environment
-exec s6-envdir "$XDG_RUNTIME_DIR"/env "$SHELL"
+exec s6-envdir "$XDG_RUNTIME_DIR"/env exec -a "${SHELL##*/}" "$SHELL"
