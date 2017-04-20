@@ -15,6 +15,7 @@ set foldlevelstart=1
 set history=100
 set modeline
 set ruler
+set spelllang=en_us
 set tabstop=4
 set textwidth=100
 set viminfo='1000,n$XDG_CACHE_HOME/vim/viminfo
@@ -25,4 +26,5 @@ syntax on
 call plug#begin('$XDG_CONFIG_HOME/vim/plugins')
 Plug 'freitass/todo.txt-vim'
 Plug 'ledger/vim-ledger'
+Plug 'rust-lang/rust.vim'
 call plug#end()
