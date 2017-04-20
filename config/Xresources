@@ -1,4 +1,4 @@
-URxvt.cursorBlink:      true
+URxvt.cursorBlink:      false
 URxvt.externalBorder:   0
 #if WIDTH == 1920
 URxvt.font:             xft:PragmataPro Mono:pixelsize=19:antialias=true:autohint=false
@@ -10,7 +10,6 @@ URxvt.internalBorder:   0
 URxvt.jumpScroll:       false
 URxvt.pastableTabs:     true
 URxvt.pointerBlank:     true
-! URxvt.print-pipe: clipboard? save to file?
 URxvt.saveLines:        1024
 URxvt.scrollBar:        false
 URxvt.scrollWithBuffer: true
@@ -19,21 +18,22 @@ URxvt.scrollTtyOutput:  false
 URxvt.secondaryScroll:  false
 URxvt.secondaryWheel:   true
 URxvt.skipScroll:       true
-URxvt.tintColor:        #7f7f7f
+URxvt.tintColor:        #bfbfbf
 URxvt.title:            Terminal
 URxvt.transparent:      true
+URxvt.tripleclickwords: true
 
 URxvt.background:       #1b181b
 URxvt.foreground:       #ccc2cc
 ! URxvt.colorBD:
 ! URxvt.colorIT:
 ! URxvt.colorUL:
-URxvt.cursorColor:      #ccc2cc
+URxvt.cursorColor:      #ddd2dd
 ! URxvt.cursorColor2:
 
 ! black
 URxvt.color0:           #1b181b
-URxvt.color8:           #665c63
+URxvt.color8:           #867c83
 ! red
 URxvt.color1:           #bf2a2a
 URxvt.color9:           #e65032
@@ -53,7 +53,7 @@ URxvt.color13:          #8162d9
 URxvt.color6:           #1e9494
 URxvt.color14:          #60bfbf
 ! white
-URxvt.color7:           #ccc2cc
+URxvt.color7:           #ddd2dd
 URxvt.color15:          #f2e9f2
 
 Xcursor.size:           16
