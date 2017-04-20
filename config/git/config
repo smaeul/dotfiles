@@ -1,8 +1,9 @@
 [color]
 	ui = true
 [core]
-	autocrlf = input
 	compression = 9
+[init]
+	templateDir = /var/empty
 [push]
 	default = simple
 [receive]
