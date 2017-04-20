@@ -7,6 +7,8 @@
 
 outdir=${1:-${XDG_RUNTIME_DIR}/env}
 
+mkdir -p "$outdir"
+
 envvar() {
   export "${1}=${2}"
   printf '%s'  "$2" > "${outdir}/${1}"
@@ -41,6 +43,7 @@ envvar GIMP2_DIRECTORY  "${XDG_CONFIG_HOME}/gimp"
 envvar GOBIN            "${HOME}/.local/bin"
 envvar GOPATH           "${HOME}/.local/lib/go"
 envvar GTK2_RC_FILES    "${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+envvar GTK_IM_MODULE    "xim"
 envvar GUILE_LOAD_PATH  ""
 envvar I3SOCK           "${XDG_RUNTIME_DIR}/i3/socket"
 envvar LANG             "en_US.UTF-8"

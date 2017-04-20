@@ -10,14 +10,20 @@ HISTSIZE=1000
 PROMPT='%B%2F%n@%m%f:%4F%~%f%b$ '
 SAVEHIST=1000
 
-bindkey -e
+if test -n "$TERM"; then
+  bindkey -e
+  bindkey "${terminfo[khome]}" beginning-of-line
+  bindkey "${terminfo[kdch1]}" delete-char
+  bindkey "${terminfo[kend]}" end-of-line
+  #bindkey "${terminfo[kich1]}" quoted-insert
+fi
+
 setopt \
   appendcreate \
   autocontinue \
   autopushd \
   cbases \
   combiningchars \
-  forcefloat \
   histexpiredupsfirst \
   histfcntllock \
   histignoredups \
